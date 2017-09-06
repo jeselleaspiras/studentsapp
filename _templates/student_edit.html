@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="my-4">Student:</h1>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}{{ form.as_p }}
+                        <button type="submit" class="save btn btn-success">Save</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+{% endblock %}

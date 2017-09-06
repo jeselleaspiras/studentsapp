@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Home - Student's App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/blog-home.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href='{% url "post_list" %}'>
+
+          {% if not request.user.is_authenticated %}
+            Student's App
+          {% else %}
+            Welcome, {{ request.user.username }}!
+          {% endif %}
+
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            {% if not request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href='{% url "home" %}'>Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href='{% url "register" %}'>Register</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href='{% url "post_list" %}'>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href='{% url "register" %}'>New Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href='{% url "student_list" %}'>Manage Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href='{% url "logout" %}'>Logout</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  {% block content %}
+  {% endblock content %}
+
+  {% if request.user.is_authenticated %}
+  <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Create Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Create</h5>
+            <div class="card-body">
+              <div class="input-group">
+              <a class="nav-link" href='{% url "post_create" %}'>
+                <button class="btn btn-primary" type="button">Course</button></a>
+              <a class="nav-link" href='{% url "student_create" %}'>
+                <button class="btn btn-primary" type="button">Account</button></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+  {% endif %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/popper/popper.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="my-4">Course Detail
+            </h1>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>College: {{ post.college }}</h2>
+                    <h2>Course: {{ post.course }}</h2>
+                    <h3>Subject: {{ post.subject }}</h3>
+                    <h3>Units: {{ post.units }}</h3>
+                    <p>Description: {{ post.description }}</p>
+
+                    {% if user.is_authenticated %}
+     		  <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
+                <button class="btn btn-warning">Edit</button></a>
+
+              <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}">
+                <button class="btn btn-danger">Delete</button></a>
+		      {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+
+{% endblock %}

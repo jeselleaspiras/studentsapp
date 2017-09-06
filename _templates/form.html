@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header class="header" id="top">
+      <div class="text-vertical-center">
+        <h1>Hello there.</h1>
+          <br>
+        <form method="POST" class="'multipart/form-data'">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="save btn btn-default">Enter</button>
+        </form>
+        <br>
+      </div>
+    </header>
+{% endblock %}

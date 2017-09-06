@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/_static/.idea/_static.iml" filepath="$PROJECT_DIR$/_static/.idea/_static.iml" />
+      <module fileurl="file://$USER_HOME$/blog-api/.idea/blog-api.iml" filepath="$USER_HOME$/blog-api/.idea/blog-api.iml" />
+      <module fileurl="file://$USER_HOME$/djangogirls/.idea/djangogirls.iml" filepath="$USER_HOME$/djangogirls/.idea/djangogirls.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/student_crm.iml" filepath="$PROJECT_DIR$/.idea/student_crm.iml" />
+    </modules>
+  </component>
+</project>
