@@ -3,7 +3,7 @@ chardet==3.0.4
 Django==1.8.14
 django-extensions==1.7.5
 django-static-jquery==2.1.4
-html5lib==0.999
+html5lib==0.99999999
 idna==2.5
 MySQL-python==1.2.5
 PyJWT==1.4.2
